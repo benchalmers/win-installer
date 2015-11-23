@@ -528,6 +528,8 @@ if __name__ == '__main__':
     if ('AUTOCOMMIT' in os.environ):
         buildlocation = os.environ['BUILD_URL']+"artifact/installer.tar"
 
+    archiveSrc = True
+
     while (len(sys.argv) > argptr):
         if (sys.argv[argptr] == "--secure"):
             securebuild = True
@@ -582,6 +584,11 @@ if __name__ == '__main__':
         if (sys.argv[argptr] == '--buildlocation'):
             buildlocation = sys.argv[argptr+1]
             argptr +=2
+            continue
+
+        if (sys.argv[argptr] == '--noarchive'):
+            archiveSrc = False
+            argptr +=1
             continue
 
     make_header()
@@ -656,10 +663,11 @@ if __name__ == '__main__':
             os.environ['MICRO_VERSION']+"."+
             os.environ['TOOLS_HOTFIX_NUMBER'])
     f.close()
-  
-    listfile = callfnout(['git','ls-tree','-r','--name-only','HEAD'])
-    archive('installer\\source.tgz', listfile.splitlines(), tgz=True)
-    archive('installer.tar', ['installer'])
+
+    if archiveSrc == True:
+        listfile = callfnout(['git','ls-tree','-r','--name-only','HEAD'])
+        archive('installer\\source.tgz', listfile.splitlines(), tgz=True)
+        archive('installer.tar', ['installer'])
 
     if ('AUTOCOMMIT' in os.environ):
         print ("AUTOCOMMIT = ",os.environ['AUTOCOMMIT'])
