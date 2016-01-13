@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceProcess;
 
+
 namespace XSToolsInstallation
 {
     static class Helpers
@@ -238,5 +239,8 @@ namespace XSToolsInstallation
 
             return success;
         }
+
+        
     }
+
 }

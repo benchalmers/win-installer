@@ -35,6 +35,9 @@
     <StartupObject>InstallAgent.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BrandSupport">
+      <HintPath>..\BrandSupport\bin\Release\BrandSupport.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
