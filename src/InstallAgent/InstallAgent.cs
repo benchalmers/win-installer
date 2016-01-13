@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using PInvokeWrap;
 using PVDevice;
 using State;
@@ -9,13 +9,14 @@ using System.Reflection;
 using System.ServiceProcess;
 using System.Threading;
 using XSToolsInstallation;
+using BrandSupport;
 
 namespace InstallAgent
 {
     public partial class InstallAgent : ServiceBase
     {
         public static string rootRegKeyName =
-            @"SOFTWARE\Citrix\InstallAgent";
+            @Branding.Instance.getString("BRANDING_installAgentRegKey");
 
         public enum RebootType
         {
@@ -249,5 +250,26 @@ namespace InstallAgent
                 );
             }
         }
+    }
+
+    public class Branding
+    {
+        private static BrandingControl instance;
+
+        public static BrandingControl Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    Assembly assembly = Assembly.GetExecutingAssembly();
+                    string brandsatpath = Path.GetDirectoryName(assembly.Location) + "\\Branding\\brandsat.dll";
+                    instance = new BrandingControl(brandsatpath);
+                }
+
+                return instance;
+            }
+        }
+
     }
 }

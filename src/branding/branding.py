@@ -23,7 +23,11 @@ branding = {
         "guestServiceShort" : "XenSvc",
         "guestServiceDesc" : "Monitors and provides various metrics to XenStore",
         "vssLong" : "Citrix XenServer VSS Provider",
-
+        "managementName" : "Windows Management Agent",
+        "managementDesc" : "Installation and Update Agent",
+        "installAgentShort" : "InstallAgent",
+        "installAgentDesc" : "Installs and updates management agent",
+        "installAgentRegKey" : "SOFTWARE\\Citrix\\InstallAgent"
 }
 
 filenames = {
@@ -36,6 +40,9 @@ filenames = {
         "guestagentmsix86" : "CitrixGuestAgentX86.msi",
         "guestagentmsix64" : "CitrixGuestAgentX64.msi",
         "installwizard" : "InstallWizard.msi",
+        "managementx64" : "managementagentx64.msi",
+        "managementx86" : "managementagentx86.msi",
+        "setup" : "setup.exe",
 }
 
 resources = {
