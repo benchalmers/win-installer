@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BrandSupport">
-      <HintPath>..\BrandSupport\bin\Release\BrandSupport.dll</HintPath>
+      <HintPath>..\..\BrandSupport\BrandSupport.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
