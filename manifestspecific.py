@@ -28,17 +28,16 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-secureserver = r'\\10.80.13.10\distfiles\distfiles\WindowsBuilds'
-localserver = r'\\filer.do.citrite.net\build\windowsbuilds\WindowsBuilds'
+artifactory='https://repo.citrite.net:443/xenserver/transformer/'
 
 build_tar_source_files = {
-       "xenguestagent" : r'xenguestagent.git\209\xenguestagent.tar',
-       "xenbus" : r'xenbus-patchq.git\78\xenbus.tar',
-       "xenvif" : r'xenvif-patchq.git\84\xenvif.tar',
-       "xennet" : r'xennet-patchq.git\53\xennet.tar',
-       "xeniface" : r'xeniface-patchq.git\46\xeniface.tar',
-       "xenvbd" : r'xenvbd-patchq.git\144\xenvbd.tar',
-       "xenvss" : r'xenvss.git\15\xenvss.tar',
+       "xenguestagent" : r'win-xenguestagent/master/win-xenguestagent-209/xenguestagent.tar',
+       "xenbus" : r'win-xenbus/patchq/win-xenbus-78/xenbus.tar',
+       "xenvif" : r'win-xenvif/patchq/win-xenvif-84/xenvif.tar',
+       "xennet" : r'win-xennet/patchq/win-xennet-53/xennet.tar',
+       "xeniface" : r'win-xeniface/patchq/win-xeniface-46/xeniface.tar',
+       "xenvbd" : r'win-xenvbd/patchq/win-xenvbd-144/xenvbd.tar',
+       "xenvss" : r'win-xenvss/master/win-xenvss-15/xenvss.tar',
 }
 
 all_drivers_signed = False
